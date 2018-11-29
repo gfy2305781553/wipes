@@ -16,8 +16,10 @@ PC端实现涂抹擦效果，超过50%的涂抹面积可以查看全部，涂抹
 1. 在HTML中提娜佳指定id的canvas标签。
 例如：
 ``` 
-<canvas id="cas" width="375" height="700"></canvas> ```
+<canvas id="cas" width="375" height="700"></canvas>
+ ```
 2. 编辑配置文件：
+ ```
 | 属性 | 取值类型 | 备注 |
 | id | 字符串 | canvas标签的id |
 | coverType | 字符串 | 取值类型"color" 或 "image" |
@@ -29,6 +31,7 @@ PC端实现涂抹擦效果，超过50%的涂抹面积可以查看全部，涂抹
 | radius | 字符串 | 涂抹笔的半径 |
 | transpercent | 数值 | 透明面积占整个画布的百分比，超出此数字显示全部画布 |
 | callback | 函数 | 用户自定义的回调函数名称 |
+ ```
 例如：
 ``` 
 var wipeConfig = {
@@ -43,6 +46,18 @@ var wipeConfig = {
 	transpercent:70, 	//透明面积占整个画布的百分比，超出此数字显示全部画布
 	callback:wipedCallback 	//用户自定义回调函数名称
 }
- ```3. 初始化wipe插件,并将上一步的配置作为参数传入例如：``` 
-new Wipe(wipeConfig); ```4. 编写回调函数。用户在涂抹完成的后继操作必须写在此回调函数中。例如：``` 
-function wipedCallback(percent){	if (percent > 50) {		console.log("透明面积超过60%，查看地图");	}} ```
+ ```
+3. 初始化wipe插件,并将上一步的配置作为参数传入
+例如：
+``` 
+new Wipe(wipeConfig);
+ ```
+4. 编写回调函数。用户在涂抹完成的后继操作必须写在此回调函数中。
+例如：
+``` 
+function wipedCallback(percent){
+	if (percent > 50) {
+		console.log("透明面积超过60%，查看地图");
+	}
+}
+ ```
